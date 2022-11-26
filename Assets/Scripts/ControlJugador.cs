@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControlJugador : MonoBehaviour
 {
@@ -24,6 +25,14 @@ public class ControlJugador : MonoBehaviour
         if (Input.GetKeyDown("escape"))
         {
             Cursor.lockState = CursorLockMode.None;
+        }
+    }
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.tag == "Enemigo")
+        {
+            SceneManager.LoadScene("Derrota");
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
         }
     }
 }

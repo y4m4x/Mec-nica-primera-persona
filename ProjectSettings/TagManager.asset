@@ -8,6 +8,7 @@ TagManager:
   - Fire1
   - bullet
   - bala
+  - Enemigo
   layers:
   - Default
   - TransparentFX
